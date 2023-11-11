@@ -1,0 +1,9 @@
+ion-button{
+    margin-left: 45%;
+    
+    @media only screen and (max-width: 767px) {
+        /* Estilos específicos para pantallas móviles */
+        margin-left: 120px;
+      }
+      
+}
