@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DeleteTaxisPage } from './delete-taxis.page';
+import { EditTaxisPage } from './edit-taxis.page';
 
-describe('DeleteTaxisPage', () => {
-  let component: DeleteTaxisPage;
-  let fixture: ComponentFixture<DeleteTaxisPage>;
+describe('EditTaxisPage', () => {
+  let component: EditTaxisPage;
+  let fixture: ComponentFixture<EditTaxisPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(DeleteTaxisPage);
+    fixture = TestBed.createComponent(EditTaxisPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

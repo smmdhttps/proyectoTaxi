@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaxiCrudService } from 'src/services/taxi-crud.service';
+import { TaxiCreateService } from 'src/services/taxi-create.service';
 
 @Component({
   selector: 'app-crear-taxi',
@@ -7,14 +7,30 @@ import { TaxiCrudService } from 'src/services/taxi-crud.service';
   styleUrls: ['./crear-taxi.page.scss'],
 })
 export class CrearTaxiComponent {
-  nuevoTaxi: any = {};
 
-  constructor(private taxiService: TaxiCrudService) {}
+  taxiData = {
+    propietario: '',
+    modelo: '',
+    placa: ''
+  };
 
-  crearTaxi() {
-    this.taxiService.createTaxi(this.nuevoTaxi).subscribe(() => {
-      console.log('Taxi creado con éxito');
-      // Puedes realizar acciones adicionales después de crear el taxi, como recargar la lista de taxis, etc.
-    });
+  constructor(private taxiCreateService: TaxiCreateService) {}
+
+  createTaxi() {
+    if (!this.taxiData.propietario || !this.taxiData.modelo || !this.taxiData.placa) {
+      this.taxiCreateService.presentToast('Todos los campos son obligatorios', false);
+      return;
+    }
+
+    this.taxiCreateService.createTaxi(this.taxiData)
+      .subscribe((response: any) => {
+        if (response.resultado === 'OK') {
+          this.taxiCreateService.presentToast('Taxi creado con éxito', true);
+
+        } else {
+          this.taxiCreateService.presentToast('Error al crear el taxi: ' + response.mensaje, false);
+        }
+      });
   }
+
 }

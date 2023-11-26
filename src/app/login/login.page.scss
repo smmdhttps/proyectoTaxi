@@ -1,9 +1,22 @@
-ion-button{
-    margin-left: 45%;
-    
-    @media only screen and (max-width: 767px) {
-        /* Estilos específicos para pantallas móviles */
-        margin-left: 120px;
-      }
-      
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+.login-card {
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-item {
+  margin-bottom: 16px;
+}
+.imgtx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
 }

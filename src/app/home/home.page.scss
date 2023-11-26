@@ -1,3 +1,41 @@
-.ion-content {
-  margin-top: -50%;
+.title-header-Home {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.admin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+.admin-card {
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.crear-text{
+  height: 50px;
+  width: 500px;
+
+}
+.show-taxis{
+  height: 50px;
+  width: 500px;
+}
+.modalAbout{
+  height: 50px;
+  width: 500px;
+}
+
+.imgtxHome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+
 }

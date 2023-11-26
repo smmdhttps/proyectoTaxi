@@ -9,10 +9,10 @@ const routes: Routes = [
     component: HomePage,
   },
 
-  { path: 'crear-taxi', 
-    component: CrearTaxiComponent, 
+  { path: 'crear-taxi',
+    component: CrearTaxiComponent,
   },
-    // Otras rutas...
+
 
 ];
 

@@ -1,0 +1,33 @@
+<ion-header class="header-edit">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <h1 class="title-header-edit">Editar Taxi</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-item>
+    <ion-icon name="person" slot="start" class="person1-icon"></ion-icon>
+    <ion-label position="stacked">Nombre del Propietario</ion-label>
+      <ion-input [(ngModel)]="taxiData.propietario" placeholder="Propietario" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="car" slot="start"></ion-icon>
+    <ion-label position="stacked"> Modelo del Taxi</ion-label>
+    <ion-input [(ngModel)]="taxiData.modelo" placeholder="Modelo" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="car-outline" slot="start" class="car1-icon"></ion-icon>
+    <ion-label position="stacked">Placa del Vehiculo</ion-label>
+    <ion-input [(ngModel)]="taxiData.placa" placeholder="Placa" required></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" type="submit" shape="round" color="success" (click)="saveChanges()">Guardar Cambios</ion-button>
+  <ion-button expand="full" routerLink="/home" shape="round" color="medium" routerLink="/load-taxis">Volver Atrás</ion-button>
+  <div class="imgtxCreate">
+    <img src="/assets/tx.png" alt="tx" >
+  </div>
+</ion-content>

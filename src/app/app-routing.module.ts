@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { EditTaxisPage } from './edit-taxis/edit-taxis.page';
 
 const routes: Routes = [
   {
@@ -25,11 +26,18 @@ const routes: Routes = [
     path: 'load-taxis',
     loadChildren: () => import('./load-taxis/load-taxis.module').then( m => m.LoadTaxisPageModule)
   },
+
   {
-    path: 'delete-taxis',
-    loadChildren: () => import('./delete-taxis/delete-taxis.module').then( m => m.DeleteTaxisPageModule)
+    path: 'edit-taxis',
+    loadChildren: () => import('./edit-taxis/edit-taxis.module').then( m => m.EditTaxisPageModule)
   },
 
+  { path: 'edit-taxis/:id',
+   component: EditTaxisPage },
+  {
+    path: 'acerca-de-nosotros',
+    loadChildren: () => import('./acerca-de-nosotros/acerca-de-nosotros.module').then( m => m.AcercaDeNosotrosPageModule)
+  }
 
 ];
 

@@ -1,20 +1,41 @@
-<ion-content>
-  <form (ngSubmit)="crearTaxi()">
+<ion-header class="header-yellow">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <h1 class="title-header" >Crear Taxis</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <form (ngSubmit)="createTaxi()" style="width: 80%; margin: 0 auto;">
+
     <ion-item>
-      <ion-label position="stacked">Nombre del propietario</ion-label>
-      <ion-input name="propietario" [(ngModel)]="nuevoTaxi.propietario" required></ion-input>
+      <ion-icon name="person" slot="start" class="person-icon"></ion-icon>
+      <ion-label position="stacked">
+        Nombre del propietario
+      </ion-label>
+      <ion-input name="propietario" [(ngModel)]="taxiData.propietario" required></ion-input>
     </ion-item>
 
     <ion-item>
+      <ion-icon name="car" slot="start"></ion-icon>
       <ion-label position="stacked">Modelo del taxi</ion-label>
-      <ion-input name="modelo" [(ngModel)]="nuevoTaxi.modelo" required></ion-input>
+      <ion-input name="modelo" [(ngModel)]="taxiData.modelo" required></ion-input>
     </ion-item>
-
     <ion-item>
+      <ion-icon name="car-outline" slot="start" class="car-icon"></ion-icon>
       <ion-label position="stacked">Placa del vehículo</ion-label>
-      <ion-input name="placa" [(ngModel)]="nuevoTaxi.placa" required></ion-input>
+      <ion-input name="placa" [(ngModel)]="taxiData.placa" required></ion-input>
     </ion-item>
 
-    <ion-button type="submit">Crear Taxi</ion-button>
+    <ion-button expand="full" type="submit" shape="round" color="success">
+      Crear Taxi
+    </ion-button>
+    <ion-button expand="full" routerLink="/home" shape="round" color="medium">
+      Volver atrás
+    </ion-button>
   </form>
+  <div class="imgtxCreate">
+    <img src="/assets/tx.png" alt="tx" >
+  </div>
 </ion-content>

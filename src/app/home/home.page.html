@@ -1,13 +1,45 @@
+<ion-header class="header-Home">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      <h1 class="title-header-Home" >Administración</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content class="ion-padding">
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>  
-  <ion-button expand="block" routerLink="/crear-taxi">Crear taxi</ion-button>
-  <ion-button expand="block" >Obtener taxi</ion-button>
-  <ion-button expand="block" >Editar taxis</ion-button>
-  <ion-button expand="block" >Eliminar taxi</ion-button>
+  <div class="admin-container">
+
+    <ion-card class="admin-card">
+
+      <ion-card-content>
+
+        <ion-item lines="none">
+          <ion-button expand="full" shape="round" color="success" routerLink="/crear-taxi" class="crear-text">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Crear Taxi
+          </ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-button expand="full" shape="round" color="primary" routerLink="/load-taxis" class="show-taxis">
+            <ion-icon slot="start" name="list"></ion-icon>
+            Ver y Editar Taxis
+          </ion-button>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-button expand="full" shape="round" color="tertiary" (click)="openAboutUsModal()" class="modalAbout">
+            <ion-icon slot="start" name="information-circle"></ion-icon>
+            Acerca de Nosotros
+          </ion-button>
+        </ion-item>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+  <div class="imgtxHome">
+    <img src="/assets/tx.png" alt="tx" >
+  </div>
 </ion-content>

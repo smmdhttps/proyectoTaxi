@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { TaxiService } from 'src/services/taxi.service';
-import { NavController } from '@ionic/angular';
-
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,27 +8,37 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['login.page.scss']
 })
 export class LoginPage {
-  usuario={
-    email:'sara.munozd@gmail.com',
-    password:'123'
-  }
+  //Muestra el usuario en los
+  usuario = {
+    email: 'sara.munozd@gmail.com',
+    password: '123'
+  };
 
-  constructor(private router: Router, private taxiService:TaxiService, private Navctrl:NavController) {}
+  constructor(
+    private taxiService: TaxiService,
+    private Navctrl: NavController,
+    private alertController: AlertController
+  ) {}
 
-  login() {
-    this.taxiService.login(this.usuario).subscribe((datos:any)=>{
-      if (datos['resultado']=='OK') {
+  async login() {
+    this.taxiService.login(this.usuario).subscribe((datos: any) => {
+      if (datos['resultado'] === 'OK') {
         setTimeout(() => {
           this.Navctrl.navigateRoot('/home');
         }, 200);
-      }else{
-        alert(datos['mensaje']);
+      } else {
+        this.presentAlert(datos['mensaje']);
       }
-    })
-    /* (if (this.email === 'usuario@ejemplo.com' && this.password === 'contraseña') {
-      this.router.navigate(['./home']);
-    } else {
+    });
+  }
 
-    }) */
+  async presentAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: mensaje,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }
